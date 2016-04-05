@@ -9,21 +9,26 @@
 import UIKit
 
 class TaskCell: BaseCell {
-   
-    let nameLabel:UILabel = {
-        
-        let label = UILabel()
-        
-        label.text = "Sample Task"
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.boldSystemFontOfSize(14)
-        
-        return label
-    }()
+  
+  /// Name label
+  let nameLabel:UILabel = {
     
-    override func buildViews() {
-        addSubview(nameLabel)
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-8-[v0]-8-|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": nameLabel]))
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-8-[v0]-8-|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": nameLabel]))
-    }
+    let label = UILabel()
+    
+    label.text = "Sample Task"
+    label.translatesAutoresizingMaskIntoConstraints = false
+    label.font = UIFont.boldSystemFontOfSize(14)
+    
+    return label
+  }()
+  
+  /**
+   * @inherits
+   */
+  override func buildViews() {
+    addSubview(nameLabel)
+    
+    addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-8-[v0]-8-|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": nameLabel]))
+    addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-8-[v0]-8-|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": nameLabel]))
+  }
 }
