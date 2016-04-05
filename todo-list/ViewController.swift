@@ -8,18 +8,56 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+    
+    var tasks = ["task1"];
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        navigationItem.title = "To-Do List"
+        
+        collectionView?.backgroundColor = UIColor.whiteColor()
+        collectionView?.alwaysBounceVertical = true
+        collectionView?.registerClass(TaskCell.self, forCellWithReuseIdentifier: "cellId")
+        collectionView?.registerClass(TaskHeader.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "taskHeader")
+        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return tasks.count
     }
-
-
+    
+    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        
+        let taskCell = collectionView.dequeueReusableCellWithReuseIdentifier("cellId", forIndexPath: indexPath) as! TaskCell
+        
+        taskCell.nameLabel.text = tasks[indexPath.item]
+        
+        return taskCell
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        
+        return CGSizeMake(view.frame.width, 50)
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSizeMake(view.frame.width, 100)
+    }
+    
+    override func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+        
+        let header = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "taskHeader", forIndexPath: indexPath) as! TaskHeader
+        header.viewController = self
+        
+        return header
+    }
+    
+    func addTask(taskName: String) {
+        tasks.append(taskName);
+        collectionView?.reloadData();
+    }
 }
+
 
