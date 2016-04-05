@@ -5,4 +5,4 @@ Don't take this to serious.
 
 ## checklist
 
-[ ] - creating views without storyboard
+- [ ] creating views without storyboard
