@@ -15,7 +15,6 @@
 		0506BA731CB428030032426E /* TaskHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0506BA721CB428030032426E /* TaskHeader.swift */; };
 		0506BA751CB428BA0032426E /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0506BA741CB428BA0032426E /* BaseCell.swift */; };
 		0506BA781CB4360D0032426E /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 0506BA761CB4360D0032426E /* LICENSE */; };
-		0506BA791CB4360D0032426E /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 0506BA771CB4360D0032426E /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -147,7 +146,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0506BA791CB4360D0032426E /* README.md in Sources */,
 				0506BA611CB401B30032426E /* ViewController.swift in Sources */,
 				0506BA711CB427B10032426E /* TaskCell.swift in Sources */,
 				0506BA5F1CB401B30032426E /* AppDelegate.swift in Sources */,

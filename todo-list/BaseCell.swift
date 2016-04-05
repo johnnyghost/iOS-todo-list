@@ -9,16 +9,32 @@
 import UIKit
 
 class BaseCell: UICollectionViewCell {
+    
+    /**
+     * Init the Base Cell.
+     *
+     *  - parameter frame
+     */
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupViews()
+        buildViews()
     }
     
+    /**
+     * Init the base Cell.
+     *
+     * - parameter aDecoder
+     *
+     */
     required init?(coder aDecoder: NSCoder) {
         fatalError("init has not been implemented");
     }
     
-    func setupViews() {
-    
-    }
+    /**
+     * Build views.
+     * 
+     * Where the components are added
+     * to the view.
+     */
+    func buildViews() {}
 }

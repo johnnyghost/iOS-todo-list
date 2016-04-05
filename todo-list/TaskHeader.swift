@@ -28,7 +28,8 @@ class TaskHeader: BaseCell {
         return button
     }()
     
-    override func setupViews() {
+    
+    override func buildViews() {
         addSubview(textInputField)
         addSubview(addButton)
         
@@ -42,5 +43,6 @@ class TaskHeader: BaseCell {
     
     func addTask() {
         viewController?.addTask(textInputField.text!)
+        textInputField.text = ""
     }
 }
